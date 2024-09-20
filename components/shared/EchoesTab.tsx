@@ -93,6 +93,7 @@ async function EchoesTab({ currentUserId, accountId, accountType }: Props) {
           comments={echo.children}
           reactions={childrenReactions[idx].users}
           reactState={childrenReactionState[idx]}
+
         />
       ))}
     </section>

@@ -7,8 +7,8 @@ import { dark } from "@clerk/themes";
 import "../globals.css";
 
 export const metadata: Metadata = {
-  title: "Echo",
-  description: "Be herd",
+  title: "Nexus",
+  description: "Amplify Your Thoughts - Echo",
 };
 
 const inter = Inter({ subsets: ["latin"] });
