@@ -14,6 +14,7 @@ interface Result {
   echoes: {
     _id: string;
     text: string;
+    sentiment: string; // Add sentiment field
     parentId: string | null;
     author: {
       name: string;
@@ -75,6 +76,7 @@ async function EchoesTab({ currentUserId, accountId, accountType }: Props) {
           currentUserId={currentUserId}
           parentId={echo.parentId}
           content={echo.text}
+          sentiment={echo.sentiment} // Pass sentiment to EchoCard
           author={
             accountType === "User"
               ? { name: result.name, image: result.image, id: result.id }
@@ -93,7 +95,6 @@ async function EchoesTab({ currentUserId, accountId, accountType }: Props) {
           comments={echo.children}
           reactions={childrenReactions[idx].users}
           reactState={childrenReactionState[idx]}
-
         />
       ))}
     </section>

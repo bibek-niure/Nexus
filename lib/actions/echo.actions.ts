@@ -376,11 +376,15 @@ export async function addCommentToEcho({
       throw new Error("Echo not found");
     }
 
-    // Create the new comment echo
+    // Analyze the sentiment of the comment
+    const sentiment = analyzeSentiment(commentText); // Analyze sentiment
+
+    // Create the new comment echo with sentiment
     const commentEcho = new Echo({
       text: commentText,
       author: userId,
       parentId: echoId, // Set the parentId to the original echo's ID
+      sentiment,        // Save the sentiment (positive, negative, neutral)
     });
 
     // Save the comment echo to the database
@@ -392,6 +396,7 @@ export async function addCommentToEcho({
     // Save the updated original echo to the database
     await originalEcho.save();
 
+    // Revalidate the path
     revalidatePath(path);
   } catch (err) {
     console.error("Error while adding comment:", err);
