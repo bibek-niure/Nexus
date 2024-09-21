@@ -187,6 +187,7 @@ export async function createEcho({ text, author, communityId, path }: Params) {
   }
 }
 
+//Fetching the comments of the main post (echo).
 async function fetchAllChildEchoes(echoId: string): Promise<any[]> {
   const childEchoes = await Echo.find({ parentId: echoId });
 
@@ -199,6 +200,7 @@ async function fetchAllChildEchoes(echoId: string): Promise<any[]> {
   return descendantEchoes;
 }
 
+// Funciton for deleting Echo
 export async function deleteEcho(id: string, path: string): Promise<void> {
   try {
     connectToDB();
@@ -255,6 +257,7 @@ export async function deleteEcho(id: string, path: string): Promise<void> {
   }
 }
 
+//Function for fecting a individual echo (details echo)
 export async function fetchEchoById(echoId: string) {
   connectToDB();
 
@@ -301,6 +304,7 @@ export async function fetchEchoById(echoId: string) {
   }
 }
 
+//Function to add reaction to echo
 export async function addReactToEcho({
   echoId,
   userId,
@@ -355,6 +359,7 @@ export async function addReactToEcho({
   }
 }
 
+//Function to add comment to post
 export async function addCommentToEcho({
   echoId,
   commentText,
@@ -404,6 +409,7 @@ export async function addCommentToEcho({
   }
 }
 
+//Function to post reaction
 export async function fetchPostReactions({ echoId }: { echoId: string }) {
   try {
     connectToDB();

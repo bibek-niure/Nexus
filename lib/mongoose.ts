@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 
 let isConnected = false; // Variable to track the connection status
 
+//  functions for database connection
 export const connectToDB = async () => {
   // Set strict query mode for Mongoose to prevent unknown field queries.
   mongoose.set("strictQuery", true);
