@@ -165,5 +165,5 @@
 }
 
 .bg-clerk-auth {
-  @apply bg-[linear-gradient(_to_right_top,#d16ba5,#c262a6,#b25aa7,#a054a8,#8c4ea9,#775fbe,#596fce,#257dda,#00a0ef,#00c1f7,#00dff6,#5ffbf1_)];
+  @apply bg-[linear-gradient(_to_right_top,#ff69b4,#ff4081,#ff007f,#e100ff,#b000ff,#6200ff,#007fff,#00bfff,#00e5ff,#00ffff,#00ffc3,#80ffdb_)];
 }

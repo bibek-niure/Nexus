@@ -28,20 +28,11 @@ export default function RootLayout({
         baseTheme: dark,
       }}
     >
-      <html lang='en'>
-        <body className={inter.className}>
-          <Topbar />
-
-          <main className='flex flex-row'>
-            <LeftSidebar />
-            <section className='main-container'>
-              <div className='w-full max-w-4xl'>{children}</div>
-            </section>
-            {/* @ts-ignore */}
-            <RightSidebar />
-          </main>
-
-          <Bottombar />
+      <html lang="en">
+        <body className={`bg-clerk-auth ${inter.className} `}>
+          <div className="flex min-h-screen w-full items-center justify-center">
+            {children}
+          </div>
         </body>
       </html>
     </ClerkProvider>
