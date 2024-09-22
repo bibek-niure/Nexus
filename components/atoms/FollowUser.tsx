@@ -1,3 +1,5 @@
+
+// client component 
 "use client";
 
 import Image from "next/image";
@@ -37,3 +39,8 @@ const FollowUser = ({ userId, currentUserId, isFollowing = false }: Props) => {
 };
 
 export default FollowUser;
+
+
+
+// forms 
+//  used client renders component on client side 
